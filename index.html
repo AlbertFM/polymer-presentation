@@ -18,7 +18,14 @@
 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
 		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<style>
+			pre + pre {
+				margin-top: -20px !important;
+				box-shadow: none !important;
+			}
+		</style>
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -44,14 +51,98 @@
 					<h1>Introduction to Polymer</h1>
 					<h3>The web components library</h3>
 					<p>
-						<small>Created by <a href="http://onlythepixel.com">Alberto Fernandez</a> / <a href="http://twitter.com/albertofdzm">@AlbertoFdzM</a></small>
+						<small>By <a href="http://onlythepixel.com">Alberto Fernandez</a> / <a href="http://twitter.com/albertofdzm">@AlbertoFdzM</a></small>
 					</p>
 				</section>
 
 				<section>
-					<h2>Polywhat?</h2>
-					<p></p>
+					<section data-markdown>
+						<script type="text/template">
+							## Polywhat?
+
+							According to Wikipedia, Polymer is:
+							> (Greek: poly-, "many" + -mer, "parts") a large molecule, or macromolecule, composed of many repeated subunits.
+
+							<aside class="notes">
+								Polymer is a library that allows to develop under <a href="http://webcomponents.org/" target="_blank">web components</a> standars taking to the present one of the many futures of the web development. Also it provides tools and simple forms to develop web components.
+							</aside>
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Advantages of Polymer against other Libraries / Frameworks
+							{{Fight GIF}}
+							<aside class="notes">
+								One of the pros of Polymer over the other frameworks is that this one is based on Standars and tends to be simple, it is not a overcharged framework as <a href="https://angularjs.org/" target="_blank">Angular</a> or <a href="http://backbonejs.org/" target="_blank">Backbone</a> providing a bunch of methods or modules, it is more like a library that tries to helps you with the develop of web components adding some extras.
+							</aside>
+						</script>
+					</section>
 				</section>
+				<section>
+					<section>
+						<h2>A Simple Polymer Component</h2>
+						{{SIMPLE POLYMER IMAGE}}
+						<aside class="notes">
+							<p>The simplest Polymer component is here to helps you understand how to start to develop Polymer Web Components.</p>
+						</aside>
+					</section>
+					<section>
+						<h3>Hello Polymer Example</h3>
+						<code>hello-digitas.html</code>
+<pre class="fragment"><code class="lang-html"><link rel="import" href="/lib/polymer/polymer.html"></code></pre><pre class="fragment"><code class="lang-html">
+
+<dom-module id="hello-digitas">
+  <template>
+    Hello Digitas!
+  </template>
+</dom-module></code></pre><pre class="fragment"><code class="lang-html">
+
+<script>
+  Polymer({
+    is: 'hello-digitas'
+  });
+</script>
+</code></pre>
+						<aside class="notes">
+							<p>The easiest way to create a Polymer element is to create an <code>html</code> file with the same name that the element will have, in this case <code>hello-digitas.html</code></p>
+						</aside>
+					</section>
+					<section>
+						<h2>Time to use it!</h2>
+<pre><code class="lang-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+
+</code></pre><pre class="fragment"><code class="lang-html">  <script src="/lib/polymer/webcomponents-lite.min.js"></script>
+</code></pre><pre class="fragment"><code class="lang-html">  <link rel="import" href="hello-digitas.html"></code></pre><pre><code class="lang-html">
+&lt;/head>
+&lt;body>
+
+</code></pre><pre class="fragment"><code class="lang-html">  &lt;hello-digitas></code></pre><pre><code class="lang-html">
+&lt;/body>
+&lt;/html>
+</code></pre>
+						<aside class="notes">
+							<a href="/examples/example1/index.html" target="_blank">DEMO</a>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Compatibility</h2>
+				</section>
+
+				<section>
+					<h2>Registration and Lifecycles</h2>
+				</section>
+
+				<section>
+					<h2></h2>
+				</section>
+
+
+
+
 
 				<!-- Example of nested vertical slides -->
 				<section>
