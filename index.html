@@ -71,7 +71,7 @@
 					<section data-markdown>
 						<script type="text/template">
 							## Advantages of Polymer against other Libraries / Frameworks
-							{{Fight GIF}}
+							<img src="/img/phil-dunphy-thumbsup.gif" class="strech">
 							<aside class="notes">
 								One of the pros of Polymer over the other frameworks is that this one is based on Standars and tends to be simple, it is not a overcharged framework as <a href="https://angularjs.org/" target="_blank">Angular</a> or <a href="http://backbonejs.org/" target="_blank">Backbone</a> providing a bunch of methods or modules, it is more like a library that tries to helps you with the develop of web components adding some extras.
 							</aside>
@@ -81,7 +81,7 @@
 				<section>
 					<section>
 						<h2>A Simple Polymer Component</h2>
-						{{SIMPLE POLYMER IMAGE}}
+						<img src="/img/polymer.png" class="strech" style="border: none; background: none;">
 						<aside class="notes">
 							<p>The simplest Polymer component is here to helps you understand how to start to develop Polymer Web Components.</p>
 						</aside>
@@ -144,7 +144,59 @@
 				</section>
 
 				<section>
-					<h2>Registration and Lifecycles</h2>
+					<section>
+						<h2>Some Theory</h2>
+					</section>
+					<section>
+						<h2>Element Registration</h2>
+					</section>
+					<section data-background="/img/say-my-name.jpg">
+						<h2>Component's Name</h2>
+						<p>Web components must contain at least <strong>one dash</strong> in its name.</p>
+
+						<span class="fragment" data-fragment-index="3" style="color: red;">failure</span>
+						<span class="fragment" data-fragment-index="1" style="color: green;">hello-digitas</span>
+						<span class="fragment" data-fragment-index="2" style="color: red;">-bug</span>
+						<span class="fragment" data-fragment-index="6" style="color: green;">AWESOME-SPAN</span>
+						<span class="fragment" data-fragment-index="10" style="color: red;">supercalifragilisticexpialidocious</span>
+						<br>
+						<span class="fragment" data-fragment-index="8" style="color: yellow;">element- (not recomended)</span>
+						<span class="fragment" data-fragment-index="5" style="color: red;">ThisWillNotWork</span>
+						<span class="fragment" data-fragment-index="7" style="color: green;">This-Will-Work</span>
+						<br>
+						<span class="fragment" data-fragment-index="4" style="color: yellow;">x-element (not recomended)</span>
+						<br>
+						<span class="fragment" data-fragment-index="9" style="color: yellow;">polymer-element (not recomended)</span>
+
+						<p>
+							<a href="https://mothereff.in/custom-element-name" target="_blank">validator</a>
+						</p>
+						<p><small>Web Components Standards approved! <img src="/img/web-components.svg" height="30" width="40" style="margin: 0; background: none; border: none;"></small></p>
+					</section>
+					<section>
+						<h2>Life Cycle</h2>
+						<ul>
+							<li>created <img src="/img/polymer.png" height="30" width="30" style="margin: 0; background: none; border: none;"> || createdCallback <img src="/img/web-components.svg" height="30" width="40" style="margin: 0; background: none; border: none;"></li>
+							<li>attached <img src="/img/polymer.png" height="30" width="30" style="margin: 0; background: none; border: none;"> || attachedCallback <img src="/img/web-components.svg" height="30" width="40" style="margin: 0; background: none; border: none;"></li>
+							<li>detached <img src="/img/polymer.png" height="30" width="30" style="margin: 0; background: none; border: none;"> || detachedCallback <img src="/img/web-components.svg" height="30" width="40" style="margin: 0; background: none; border: none;"></li>
+							<li>attributeChanged <img src="/img/polymer.png" height="30" width="30" style="margin: 0; background: none; border: none;"> || attributeChangedCallback <img src="/img/web-components.svg" height="30" width="40" style="margin: 0; background: none; border: none;"></li>
+							<li>ready <img src="/img/polymer.png" height="30" width="30" style="margin: 0; background: none; border: none;"></li>
+						</ul>
+						<aside class="notes">
+							<p>Polymer implements the standard life cycle events of web components.</p>
+							<small><ol>
+								<li>created callback</li>
+								<li>local DOM initialized</li>
+								<li>ready callback</li>
+								<li>factoryImpl callback</li>
+								<li>attached callback</li>
+							</ol></small>
+							<a href="/examples/events/" target="_blank">DEMO</a>
+						</aside>
+					</section>
+					<section>
+						
+					</section>
 				</section>
 
 				<section>

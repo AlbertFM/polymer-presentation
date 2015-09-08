@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Polymer Events Example</title>
+  <script src="/lib/polymer/webcomponents-lite.min.js"></script>
+  <link rel="import" href="/lib/polymer/polymer.html">
+</head>
+<body>
+  <dom-module id="my-element">
+
+    <template>Hello <span id="name"></span></template>
+
+    <script>
+    HTMLImports.whenReady(function () {
+      MyElement = Polymer({
+
+        is: 'my-element',
+
+        created: function() {
+          console.log(this.localName + '#' + this.id + ' was created');
+        },
+
+        attached: function() {
+          console.log(this.localName + '#' + this.id + ' was attached');
+        },
+
+        detached: function() {
+          console.log(this.localName + '#' + this.id + ' was detached');
+        },
+
+        attributeChanged: function(name, type) {
+          console.log(this.localName + '#' + this.id + ' attribute ' + name +
+            ' was changed to ' + this.getAttribute(name));
+        },
+
+        ready: function() {
+          console.log(this.localName + '#' + this.id + ' was ready');
+
+          // access a local DOM element by ID using this.$
+          this.$.name.textContent = ' Digitas!';
+        }
+
+      });
+
+    });
+    </script>
+  </dom-module>
+
+  <my-element>
+</body>
+</html>
