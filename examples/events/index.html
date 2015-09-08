@@ -13,7 +13,7 @@
 
     <script>
     HTMLImports.whenReady(function () {
-      MyElement = Polymer({
+      window.MyElement = Polymer({
 
         is: 'my-element',
 
@@ -34,6 +34,10 @@
             ' was changed to ' + this.getAttribute(name));
         },
 
+        factoryImpl: function () {
+          console.log(this.localName + '#' + this.id + ' was factoryImpl');
+        },
+
         ready: function() {
           console.log(this.localName + '#' + this.id + ' was ready');
 
@@ -44,6 +48,12 @@
       });
 
     });
+    /*
+      $0.setAttribute('foo', 'bar');
+      var foo = document.createElement('my-element');
+      var bar = new MyElement();
+      Polymer.dom($0).node.appendChild(test);
+    */
     </script>
   </dom-module>
 
