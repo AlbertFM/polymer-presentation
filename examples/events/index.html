@@ -9,13 +9,21 @@
 <body>
   <dom-module id="my-element">
 
-    <template>Hello <span id="name"></span></template>
+    <template>Hello <span id="name" >{{greet}}</span></template>
 
     <script>
     HTMLImports.whenReady(function () {
       window.MyElement = Polymer({
 
         is: 'my-element',
+
+        properties: {
+          greet: {
+            type: String,
+            bindToAttribute: true,
+            value: 'Digitas'
+          }
+        },
 
         created: function() {
           console.log(this.localName + '#' + this.id + ' was created');
@@ -42,7 +50,7 @@
           console.log(this.localName + '#' + this.id + ' was ready');
 
           // access a local DOM element by ID using this.$
-          this.$.name.textContent = ' Digitas!';
+          //this.$.name.textContent = ' Digitas!';
         }
 
       });
