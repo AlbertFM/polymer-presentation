@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Polymer Events Example</title>
+  <script src="/lib/polymer/webcomponents-lite.min.js"></script>
+  <link rel="import" href="/lib/polymer/polymer.html">
+</head>
+<body>
+  <dom-module id="my-element">
+
+    <template>Hello <span id="name" >{{greet}}</span></template>
+
+    <script>
+    HTMLImports.whenReady(function () {
+      window.MyElement = Polymer({
+
+        is: 'my-element',
+
+        properties: {
+          greet: {
+            type: String,
+            bindToAttribute: true,
+            value: 'Digitas'
+          }
+        },
+
+        created: function() {
+          console.log(this.localName + '#' + this.id + ' was created');
+        },
+
+        attached: function() {
+          console.log(this.localName + '#' + this.id + ' was attached');
+        },
+
+        detached: function() {
+          console.log(this.localName + '#' + this.id + ' was detached');
+        },
+
+        attributeChanged: function(name, type) {
+          console.log(this.localName + '#' + this.id + ' attribute ' + name +
+            ' was changed to ' + this.getAttribute(name));
+        },
+
+        factoryImpl: function () {
+          console.log(this.localName + '#' + this.id + ' was factoryImpl');
+        },
+
+        ready: function() {
+          console.log(this.localName + '#' + this.id + ' was ready');
+
+          // access a local DOM element by ID using this.$
+          //this.$.name.textContent = ' Digitas!';
+        }
+
+      });
+
+    });
+    /*
+      $0.setAttribute('foo', 'bar');
+      var foo = document.createElement('my-element');
+      var bar = new MyElement();
+      Polymer.dom($0).node.appendChild(test);
+    */
+    </script>
+  </dom-module>
+
+  <my-element>
+</body>
+</html>
